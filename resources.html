@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Resources - Jacaranda Blue-Mist Medical Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="resources.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <img src="tree.png" alt="Jacaranda tree logo" class="logo-img">
+        <span class="logo-text">
+          <span class="logo-jacaranda">Jacaranda Blue-Mist</span>
+          <span class="logo-medical"> Medical Centre</span>
+        </span>
+      </div>
+      <a href="#appointment-form" class="btn-appointment">Book Appointment</a>
+    </div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Medical Services</a></li>
+        <li><a href="doctors.html">Find a Doctor</a></li>
+        <li><a href="resources.html" class="active">Patient Resources</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-banner">
+    <p class="banner-label">YOUR HEALTH, OUR PRIORITY</p>
+    <h1 class="banner-title">Patient Resources</h1>
+  </section>
+
+  <div class="tts-bar">
+    <span class="tts-label">🔊 Text-to-Speech:</span>
+    <button class="tts-btn active" id="btn-en" onclick="setLanguage('en')">English</button>
+    <button class="tts-play" onclick="speakPage()" id="tts-play-btn">▶ Read Page</button>
+    <button class="tts-stop" onclick="stopSpeech()">■ Stop</button>
+  </div>
+
+  <section class="resources-section" id="appointment-form">
+    <div class="section-header">
+      <p class="banner-label">BOOK IN MINUTES</p>
+      <h2 class="section-title">Appointment Booking</h2>
+    </div>
+
+    <div class="form-card">
+      <form id="booking-form" onsubmit="submitForm(event)" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="full-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="full-name" name="fullName" placeholder="e.g. Sita Rai" autocomplete="name" required>
+            <span class="form-error" id="err-name"></span>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 9841000000" autocomplete="tel" required>
+            <span class="form-error" id="err-phone"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="e.g. name@email.com" autocomplete="email">
+            <span class="form-error" id="err-email"></span>
+          </div>
+          <div class="form-group">
+            <label for="specialty">Specialty Needed <span class="req">*</span></label>
+            <select id="specialty" name="specialty" required>
+              <option value="">-- Select a Specialty --</option>
+              <option value="neurology">Neurology</option>
+              <option value="cardiology">Cardiology</option>
+              <option value="pediatrics">Pediatrics</option>
+              <option value="general surgery">General Surgery</option>
+              <option value="oncology">Oncology</option>
+              <option value="orthopedics">Orthopedics</option>
+            </select>
+            <span class="form-error" id="err-specialty"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="appt-date">Preferred Date <span class="req">*</span></label>
+            <input type="date" id="appt-date" name="appointmentDate" required>
+            <span class="form-error" id="err-date"></span>
+          </div>
+          <div class="form-group">
+            <label for="appt-time">Preferred Time <span class="req">*</span></label>
+            <select id="appt-time" name="appointmentTime" required>
+              <option value="">-- Select Time --</option>
+              <option value="09:00">09:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="13:00">01:00 PM</option>
+              <option value="14:00">02:00 PM</option>
+              <option value="15:00">03:00 PM</option>
+              <option value="16:00">04:00 PM</option>
+            </select>
+            <span class="form-error" id="err-time"></span>
+          </div>
+        </div>
+        <div class="form-group full-width">
+          <label for="message">Additional Notes</label>
+          <textarea id="message" name="message" rows="3" placeholder="Describe your symptoms or any special requirements..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Confirm Appointment</button>
+      </form>
+
+      <div class="form-success" id="form-success" style="display:none;">
+        <span class="success-icon">✅</span>
+        <h3>Appointment Confirmed!</h3>
+        <p id="success-details"></p>
+        <button class="btn-submit" onclick="resetForm()">Book Another</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="resources-section alt-bg" id="checkup-guidelines">
+    <div class="section-header">
+      <p class="banner-label">WHAT TO EXPECT</p>
+      <h2 class="section-title">Check-Up Guidelines</h2>
+    </div>
+    <div class="guidelines-grid">
+      <div class="guideline-card">
+        <div class="guideline-icon">🩺</div>
+        <h3>Before Your Visit</h3>
+        <ul>
+          <li>Fast for 8 hours if blood tests are required</li>
+          <li>Bring previous medical records or prescriptions</li>
+          <li>List any current medications you are taking</li>
+          <li>Arrive 15 minutes before your appointment</li>
+        </ul>
+      </div>
+      <div class="guideline-card">
+        <div class="guideline-icon">🏥</div>
+        <h3>During Your Visit</h3>
+        <ul>
+          <li>A nurse will record your vitals first</li>
+          <li>Your doctor will review your medical history</li>
+          <li>Be honest about your symptoms — no detail is too small</li>
+          <li>Ask questions — our doctors are here to help</li>
+        </ul>
+      </div>
+      <div class="guideline-card">
+        <div class="guideline-icon">📋</div>
+        <h3>After Your Visit</h3>
+        <ul>
+          <li>Follow the prescribed treatment plan carefully</li>
+          <li>Collect your prescriptions from our pharmacy</li>
+          <li>Schedule any recommended follow-up appointments</li>
+          <li>Call 1134 anytime for emergencies</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="resources-section" id="followup">
+    <div class="section-header">
+      <p class="banner-label">CONTINUING YOUR CARE</p>
+      <h2 class="section-title">Follow-Up Instructions</h2>
+    </div>
+    <div class="followup-grid">
+      <div class="followup-item">
+        <span class="followup-num">01</span>
+        <div>
+          <h3>Take Medications as Prescribed</h3>
+          <p>Never skip doses or stop medication early without consulting your doctor, even if you feel better.</p>
+        </div>
+      </div>
+      <div class="followup-item">
+        <span class="followup-num">02</span>
+        <div>
+          <h3>Attend All Follow-Up Appointments</h3>
+          <p>Follow-up visits allow your doctor to monitor your recovery and adjust treatment if necessary.</p>
+        </div>
+      </div>
+      <div class="followup-item">
+        <span class="followup-num">03</span>
+        <div>
+          <h3>Watch for Warning Signs</h3>
+          <p>Contact us immediately if you experience worsening symptoms, allergic reactions, or any new concerns.</p>
+        </div>
+      </div>
+      <div class="followup-item">
+        <span class="followup-num">04</span>
+        <div>
+          <h3>Rest and Recovery</h3>
+          <p>Give your body time to heal. Maintain a healthy diet, stay hydrated, and avoid strenuous activity unless cleared by your doctor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resources-section alt-bg" id="health-education">
+    <div class="section-header">
+      <p class="banner-label">KNOW YOUR HEALTH</p>
+      <h2 class="section-title">Basic Health Education</h2>
+    </div>
+    <div class="health-tabs">
+      <div class="health-tab-btns">
+        <button class="health-tab-btn active" onclick="showTab('nutrition', this)">🥗 Nutrition</button>
+        <button class="health-tab-btn" onclick="showTab('hygiene', this)">🧼 Hygiene</button>
+        <button class="health-tab-btn" onclick="showTab('mental', this)">🧠 Mental Health</button>
+        <button class="health-tab-btn" onclick="showTab('emergency', this)">🚨 Emergency Signs</button>
+      </div>
+      <div class="health-tab-content">
+        <div class="health-tab-panel active" id="tab-nutrition">
+          <h3>Eat Well, Live Well</h3>
+          <p>A balanced diet is the foundation of good health. Aim for a mix of proteins, carbohydrates, healthy fats, vitamins, and minerals in every meal. Drink at least 8 glasses of water daily, reduce processed food intake, and include fresh fruits and vegetables in every meal.</p>
+        </div>
+        <div class="health-tab-panel" id="tab-hygiene">
+          <h3>Hygiene Prevents Disease</h3>
+          <p>Wash your hands thoroughly with soap for at least 20 seconds before eating, after using the toilet, and after coughing or sneezing. Keep wounds clean and covered. Maintain oral hygiene by brushing twice daily and visiting your dentist regularly.</p>
+        </div>
+        <div class="health-tab-panel" id="tab-mental">
+          <h3>Mental Health Matters</h3>
+          <p>Mental health is just as important as physical health. Talk to someone you trust when feeling overwhelmed. Get 7–8 hours of sleep, exercise regularly, and limit screen time. If you are experiencing anxiety or depression, our specialists are here to help — there is no shame in seeking support.</p>
+        </div>
+        <div class="health-tab-panel" id="tab-emergency">
+          <h3>Know When to Call Emergency</h3>
+          <p>Call 1134 immediately if you or someone nearby experiences: chest pain or pressure, difficulty breathing, sudden severe headache, loss of consciousness, uncontrolled bleeding, or signs of stroke (face drooping, arm weakness, speech difficulty). Do not wait — every second counts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="tree.png" alt="logo" class="logo-img-sm">
+          <div>
+            <span class="logo-jacaranda">Jacaranda Blue-Mist</span><br>
+            <span class="footer-subtitle">Medical Centre</span>
+          </div>
+        </div>
+        <ul class="footer-contact">
+          <li>📍 123 Jacaranda Lane, Blue Mist City, CA 90001</li>
+          <li>🚨 Emergency: 1134 (24/7)</li>
+          <li>📞 (555) 123-4567</li>
+          <li>✉️ info@jacarandamc.com</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Medical Services</a></li>
+          <li><a href="doctors.html">Find a Doctor</a></li>
+          <li><a href="resources.html">Patient Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Medical Services</h3>
+        <ul>
+          <li><a href="doctors.html">Cardiology</a></li>
+          <li><a href="doctors.html">Oncology</a></li>
+          <li><a href="doctors.html">Pediatrics</a></li>
+          <li><a href="doctors.html">Heli-Rescue</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Patient Resources</h3>
+        <ul>
+          <li><a href="#appointment-form">Book Appointment</a></li>
+          <li><a href="#checkup-guidelines">Check-Up Guidelines</a></li>
+          <li><a href="#followup">Follow-Up Instructions</a></li>
+          <li><a href="#health-education">Health Education</a></li>
+        </ul>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    <span>© 2025, Jacaranda Blue-Mist Medical Centre. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+
+  <script src="resources.js"></script>
+</body>
+</html>

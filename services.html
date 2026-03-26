@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Services - Jacaranda Blue-Mist Medical Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Services.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <img src="tree.png" alt="Jacaranda tree logo" class="logo-img">
+        <span class="logo-text">
+          <span class="logo-jacaranda">Jacaranda Blue-Mist</span>
+          <span class="logo-medical"> Medical Centre</span>
+        </span>
+      </div>
+      <a href="resources.html" class="btn-appointment">Book Appointment</a>
+    </div>
+
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Medical Services</a></li>
+        <li><a href="doctors.html">Find a Doctor</a></li>
+        <li><a href="resources.html">Patient Resources</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-banner">
+    <p class="banner-label">CARE YOU CAN BELIEVE IN</p>
+    <h1 class="banner-title">Our Services</h1>
+  </section>
+
+  <section class="services-layout">
+
+    <aside class="services-sidebar">
+      <div class="sidebar-item" onclick="showService('checkup')">
+        <div class="sidebar-icon">🩺</div>
+        <span>Free Checkup</span>
+      </div>
+      <div class="sidebar-item active" onclick="showService('cardiogram')">
+        <div class="sidebar-icon">❤️</div>
+        <span>Cardiogram</span>
+      </div>
+      <div class="sidebar-item" onclick="showService('dna')">
+        <div class="sidebar-icon">🧬</div>
+        <span>DNA Testing</span>
+      </div>
+      <div class="sidebar-item" onclick="showService('blood')">
+        <div class="sidebar-icon">🩸</div>
+        <span>Blood Bank</span>
+      </div>
+      <a href="#" class="sidebar-view-all">View All</a>
+    </aside>
+
+    <div class="services-content">
+
+      <div class="service-detail" id="service-checkup" style="display:none;">
+        <h2>A passion for putting patients first.</h2>
+        <div class="service-features">
+          <ul>
+            <li><span class="dot"></span> A Passion for Healing</li>
+            <li><span class="dot"></span> All our best</li>
+            <li><span class="dot"></span> A Legacy of Excellence</li>
+          </ul>
+          <ul>
+            <li><span class="dot"></span> 5-Star Care</li>
+            <li><span class="dot"></span> Believe in Us</li>
+            <li><span class="dot"></span> Always Caring</li>
+          </ul>
+        </div>
+        <p class="service-desc">Our Free Checkup program is designed to give every patient access to essential health screenings regardless of financial status. We believe preventive care is the foundation of a healthy community, and we are committed to making it available to all.</p>
+        <p class="service-desc">Our team of experienced physicians conducts thorough examinations to catch potential health issues early, giving you peace of mind and a clear path to better health.</p>
+      </div>
+
+      <div class="service-detail" id="service-cardiogram">
+        <h2>A passion for putting patients first.</h2>
+        <div class="service-features">
+          <ul>
+            <li><span class="dot"></span> A Passion for Healing</li>
+            <li><span class="dot"></span> All our best</li>
+            <li><span class="dot"></span> A Legacy of Excellence</li>
+          </ul>
+          <ul>
+            <li><span class="dot"></span> 5-Star Care</li>
+            <li><span class="dot"></span> Believe in Us</li>
+            <li><span class="dot"></span> Always Caring</li>
+          </ul>
+        </div>
+        <p class="service-desc">At our facility, we combine pioneer-level medical expertise with the most advanced technology available to ensure your health is in the best possible hands. From AI-driven diagnostics that catch issues before they escalate to robotic-assisted surgeries that offer pinpoint precision and faster recovery, we lead the way in modern medicine. Our board-certified specialists work across disciplines to provide seamless, comprehensive care, ensuring that every patient benefits from a collective pool of world-class knowledge and 24/7 emergency readiness.
+</p>
+        <p class="service-desc">Beyond the tech, we believe true healing happens in an environment of unmatched comfort and compassion. Our private patient suites are designed to be tranquil sanctuaries, moving away from the cold, clinical feel of traditional wards to focus on holistic well-being. We treat the whole person, not just the diagnosis, offering integrated support services like nutritional therapy and dedicated patient advocates. Here, you aren't just a chart number; you are part of a community dedicated to getting you back to your best life with dignity and care.</p>
+      </div>
+
+      <div class="service-detail" id="service-dna" style="display:none;">
+        <h2>A passion for putting patients first.</h2>
+        <div class="service-features">
+          <ul>
+            <li><span class="dot"></span> A Passion for Healing</li>
+            <li><span class="dot"></span> All our best</li>
+            <li><span class="dot"></span> A Legacy of Excellence</li>
+          </ul>
+          <ul>
+            <li><span class="dot"></span> 5-Star Care</li>
+            <li><span class="dot"></span> Believe in Us</li>
+            <li><span class="dot"></span> Always Caring</li>
+          </ul>
+        </div>
+        <p class="service-desc">Our advanced DNA Testing services provide accurate genetic analysis to identify inherited conditions, assess disease risk, and guide personalized treatment plans for every patient.</p>
+        <p class="service-desc">With state-of-the-art laboratory equipment and certified geneticists on our team, results are delivered quickly and explained clearly so you can make informed health decisions.</p>
+      </div>
+
+      <div class="service-detail" id="service-blood" style="display:none;">
+        <h2>A passion for putting patients first.</h2>
+        <div class="service-features">
+          <ul>
+            <li><span class="dot"></span> A Passion for Healing</li>
+            <li><span class="dot"></span> All our best</li>
+            <li><span class="dot"></span> A Legacy of Excellence</li>
+          </ul>
+          <ul>
+            <li><span class="dot"></span> 5-Star Care</li>
+            <li><span class="dot"></span> Believe in Us</li>
+            <li><span class="dot"></span> Always Caring</li>
+          </ul>
+        </div>
+        <p class="service-desc">Our Blood Bank maintains a safe and well-stocked supply of all blood types to support emergency procedures, surgeries, and transfusions across all departments of the medical centre.</p>
+        <p class="service-desc">We follow strict international protocols for blood collection, testing, and storage — ensuring that every unit is safe, traceable, and ready when lives depend on it.</p>
+      </div>
+
+    </div>
+
+    <div class="services-images">
+      <img src="surgery.jpg" alt="Doctor with patient">
+      <img src="Narmaya%20mam.jpg" alt="Medical team">
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div>
+            <span class="logo-jacaranda">Jacaranda Blue-Mist</span><br>
+            <span class="footer-subtitle">Medical Centre</span>
+          </div>
+        </div>
+        <ul class="footer-contact">
+          <li>📍 123 Jacaranda Lane, Blue Mist City, CA 90001</li>
+          <li>🚨 Emergency: 1134 (24/7)</li>
+          <li>📞 (555) 123-4567</li>
+          <li>✉️ info@jacarandamc.com</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Medical Services</h3>
+        <ul>
+          <li><a href="#">Cardiology</a></li>
+          <li><a href="#">Oncology</a></li>
+          <li><a href="#">Pediatrics</a></li>
+          <li><a href="#">Heli-Rescue</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Patient Resources</h3>
+        <ul>
+          <li><a href="#">Surgery</a></li>
+          <li><a href="#">Pediatrics</a></li>
+          <li><a href="#">Home Care</a></li>
+          <li><a href="#">Pharmacy</a></li>
+        </ul>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    <span>© 2025, Jacaranda Blue-Mist Medical Centre. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+
+  <script src="services.js"></script>
+</body>
+</html>

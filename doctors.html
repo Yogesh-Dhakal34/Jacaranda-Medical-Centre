@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a Doctor - Jacaranda Blue-Mist Medical Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="doctor.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <img src="tree.png" alt="Jacaranda tree logo" class="logo-img">
+        <span class="logo-text">
+          <span class="logo-jacaranda">Jacaranda Blue-Mist</span>
+          <span class="logo-medical"> Medical Centre</span>
+        </span>
+      </div>
+      <a href="resources.html" class="btn-appointment">Book Appointment</a>
+    </div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Medical Services</a></li>
+        <li><a href="doctors.html" class="active">Find a Doctor</a></li>
+        <li><a href="resources.html">Patient Resources</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-banner">
+    <p class="banner-label">TRUSTED CARE</p>
+    <h1 class="banner-title">Our Doctors</h1>
+  </section>
+
+  <section class="filter-bar" aria-labelledby="filter-bar-title">
+    <h2 id="filter-bar-title" class="visually-hidden">Filter Doctors</h2>
+    <input type="text" id="search-input" class="filter-search" placeholder="🔍  Search by name or specialty..." oninput="filterDoctors()">
+    <div class="filter-buttons">
+      <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+      <button class="filter-btn" onclick="setFilter('neurology', this)">ENT Specialist</button>
+      <button class="filter-btn" onclick="setFilter('cardiology', this)">Cardiology</button>
+      <button class="filter-btn" onclick="setFilter('pediatrics', this)">Pediatrics</button>
+      <button class="filter-btn" onclick="setFilter('general surgery', this)">General Surgery</button>
+      <button class="filter-btn" onclick="setFilter('oncology', this)">Oncology</button>
+      <button class="filter-btn" onclick="setFilter('orthopedics', this)">Orthopedics</button>
+    </div>
+  </section>
+
+  <section class="doctors-section" aria-labelledby="doctors-section-title">
+    <h2 id="doctors-section-title" class="visually-hidden">Doctor Profiles</h2>
+
+    <button class="carousel-arrow left" onclick="changeSlide(-1)" aria-label="Previous">&#8592;</button>
+
+    <div class="carousel-wrapper">
+
+      <div class="carousel-slide active" id="slide-0">
+        <div class="doctor-card" data-specialty="neurology" data-name="Prof.Dr. Narmaya Thapa">
+          <div class="doctor-img-wrap">
+            <img src="Narmaya%20mam.jpg" alt="Prof.Dr. Narmaya Thapa">
+          </div>
+          <div class="doctor-info">
+            <p class="doctor-name">Prof.Dr. Narmaya Thapa</p>
+            <p class="doctor-specialty">ENT Specialist</p>
+            <div class="doctor-socials">
+              <a href="#" aria-label="LinkedIn" class="social-dot">in</a>
+              <a href="#" aria-label="Facebook" class="social-dot">f</a>
+              <a href="#" aria-label="Instagram" class="social-dot">📷</a>
+            </div>
+            <a href="#" class="btn-view-profile">View Profile</a>
+          </div>
+        </div>
+
+        <div class="doctor-card" data-specialty="cardiology" data-name="dr. Parag karki">
+          <div class="doctor-img-wrap">
+            <img src="Parag%20karki.jpg" alt="Dr. Parag Karki">
+          </div>
+          <div class="doctor-info">
+            <p class="doctor-name">Dr. Parag Karki</p>
+            <p class="doctor-specialty">CARDIOLOGY</p>
+            <div class="doctor-socials">
+              <a href="#" aria-label="LinkedIn" class="social-dot">in</a>
+              <a href="#" aria-label="Facebook" class="social-dot">f</a>
+              <a href="#" aria-label="Instagram" class="social-dot">📷</a>
+            </div>
+            <a href="#" class="btn-view-profile">View Profile</a>
+          </div>
+        </div>
+
+        <div class="doctor-card" data-specialty="pediatrics" data-name="dr. amara diallo">
+          <div class="doctor-img-wrap">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Dr. Amara Diallo">
+          </div>
+          <div class="doctor-info">
+            <p class="doctor-name">Dr. Amara Diallo</p>
+            <p class="doctor-specialty">PEDIATRICS</p>
+            <div class="doctor-socials">
+              <a href="#" aria-label="LinkedIn" class="social-dot">in</a>
+              <a href="#" aria-label="Facebook" class="social-dot">f</a>
+              <a href="#" aria-label="Instagram" class="social-dot">📷</a>
+            </div>
+            <a href="#" class="btn-view-profile">View Profile</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide" id="slide-1">
+        <div class="doctor-card" data-specialty="general surgery" data-name="dr. kwame asante">
+          <div class="doctor-img-wrap">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80" alt="Dr. Kwame Asante">
+          </div>
+          <div class="doctor-info">
+            <p class="doctor-name">Dr. Kwame Asante</p>
+            <p class="doctor-specialty">GENERAL SURGERY</p>
+            <div class="doctor-socials">
+              <a href="#" aria-label="LinkedIn" class="social-dot">in</a>
+              <a href="#" aria-label="Facebook" class="social-dot">f</a>
+              <a href="#" aria-label="Instagram" class="social-dot">📷</a>
+            </div>
+            <a href="#" class="btn-view-profile">View Profile</a>
+          </div>
+        </div>
+
+        <div class="doctor-card" data-specialty="oncology" data-name="dr. fatima hassan">
+          <div class="doctor-img-wrap">
+            <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=400&q=80" alt="Dr. Fatima Hassan">
+          </div>
+          <div class="doctor-info">
+            <p class="doctor-name">Dr. Fatima Hassan</p>
+            <p class="doctor-specialty">ONCOLOGY</p>
+            <div class="doctor-socials">
+              <a href="#" aria-label="LinkedIn" class="social-dot">in</a>
+              <a href="#" aria-label="Facebook" class="social-dot">f</a>
+              <a href="#" aria-label="Instagram" class="social-dot">📷</a>
+            </div>
+            <a href="#" class="btn-view-profile">View Profile</a>
+          </div>
+        </div>
+
+        <div class="doctor-card" data-specialty="orthopedics" data-name="dr. chen wei">
+          <div class="doctor-img-wrap">
+            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&q=80" alt="Dr. Chen Wei">
+          </div>
+          <div class="doctor-info">
+            <p class="doctor-name">Dr. Chen Wei</p>
+            <p class="doctor-specialty">ORTHOPEDICS</p>
+            <div class="doctor-socials">
+              <a href="#" aria-label="LinkedIn" class="social-dot">in</a>
+              <a href="#" aria-label="Facebook" class="social-dot">f</a>
+              <a href="#" aria-label="Instagram" class="social-dot">📷</a>
+            </div>
+            <a href="#" class="btn-view-profile">View Profile</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-arrow right" onclick="changeSlide(1)" aria-label="Next">&#8594;</button>
+
+  </section>
+
+  <div class="carousel-dots">
+    <span class="dot-btn" onclick="goToSlide(0)"></span>
+    <span class="dot-btn active" onclick="goToSlide(1)"></span>
+  </div>
+
+  <div class="no-results" id="no-results" style="display:none;">
+    <p>No doctors found matching your search.</p>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="tree.png" alt="logo" class="logo-img-sm">
+          <div>
+            <span class="logo-jacaranda">Jacaranda Blue-Mist</span><br>
+            <span class="footer-subtitle">Medical Centre</span>
+          </div>
+        </div>
+        <ul class="footer-contact">
+          <li>📍 123 Jacaranda Lane, Blue Mist City, CA 90001</li>
+          <li>🚨 Emergency: 1134 (24/7)</li>
+          <li>📞 (555) 123-4567</li>
+          <li>✉️ info@jacarandamc.com</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Medical Services</a></li>
+          <li><a href="doctors.html">Find a Doctor</a></li>
+          <li><a href="resources.html">Patient Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Medical Services</h3>
+        <ul>
+          <li><a href="#">Cardiology</a></li>
+          <li><a href="#">Oncology</a></li>
+          <li><a href="#">Pediatrics</a></li>
+          <li><a href="#">Heli-Rescue</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Patient Resources</h3>
+        <ul>
+          <li><a href="#">Surgery</a></li>
+          <li><a href="#">Pediatrics</a></li>
+          <li><a href="#">Home Care</a></li>
+          <li><a href="#">Pharmacy</a></li>
+        </ul>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    <span>© 2025, Jacaranda Blue-Mist Medical Centre. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+
+  <script src="doctors.js"></script>
+</body>
+</html>
